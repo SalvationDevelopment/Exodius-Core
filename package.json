@@ -1,0 +1,22 @@
+{
+  "name": "exodius-core",
+  "version": "0.0.1",
+  "description": "JavaScript implementation of edopro/ygopro-core",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalvationDevelopment/Exodius-Core.git"
+  },
+  "keywords": [
+    "yu-gi-oh"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SalvationDevelopment/Exodius-Core/issues"
+  },
+  "homepage": "https://github.com/SalvationDevelopment/Exodius-Core#readme"
+}
