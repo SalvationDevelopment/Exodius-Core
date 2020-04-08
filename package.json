@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/SalvationDevelopment/Exodius-Core#readme",
   "dependencies": {
-    "lua.vm.js": "0.0.1"
+    "fengari": "^0.1.4"
   }
 }
