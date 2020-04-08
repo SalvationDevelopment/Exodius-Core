@@ -274,3 +274,459 @@ const cardlib = {
     "Cover": scriptlib.card_cover,
     "NULL": null
 };
+
+
+const effectlib = {
+    "CreateEffect": scriptlib.effect_new,
+    "GlobalEffect": scriptlib.effect_newex,
+    "Clone": scriptlib.effect_clone,
+    "Reset": scriptlib.effect_reset,
+    "GetFieldID": scriptlib.effect_get_field_id,
+    "SetDescription": scriptlib.effect_set_description,
+    "SetCode": scriptlib.effect_set_code,
+    "SetRange": scriptlib.effect_set_range,
+    "SetTargetRange": scriptlib.effect_set_target_range,
+    "SetAbsoluteRange": scriptlib.effect_set_absolute_range,
+    "SetCountLimit": scriptlib.effect_set_count_limit,
+    "SetReset": scriptlib.effect_set_reset,
+    "SetType": scriptlib.effect_set_type,
+    "SetProperty": scriptlib.effect_set_property,
+    "SetLabel": scriptlib.effect_set_label,
+    "SetLabelObject": scriptlib.effect_set_label_object,
+    "SetCategory": scriptlib.effect_set_category,
+    "SetHintTiming": scriptlib.effect_set_hint_timing,
+    "SetCondition": scriptlib.effect_set_condition,
+    "SetTarget": scriptlib.effect_set_target,
+    "SetCost": scriptlib.effect_set_cost,
+    "SetValue": scriptlib.effect_set_value,
+    "SetOperation": scriptlib.effect_set_operation,
+    "SetOwnerPlayer": scriptlib.effect_set_owner_player,
+    "GetDescription": scriptlib.effect_get_description,
+    "GetCode": scriptlib.effect_get_code,
+    "GetCountLimit": scriptlib.effect_get_count_limit,
+    "GetReset": scriptlib.effect_get_reset,
+    "GetType": scriptlib.effect_get_type,
+    "GetProperty": scriptlib.effect_get_property,
+    "GetLabel": scriptlib.effect_get_label,
+    "GetLabelObject": scriptlib.effect_get_label_object,
+    "GetCategory": scriptlib.effect_get_category,
+    "GetOwner": scriptlib.effect_get_owner,
+    "GetHandler": scriptlib.effect_get_handler,
+    "GetCondition": scriptlib.effect_get_condition,
+    "GetTarget": scriptlib.effect_get_target,
+    "GetCost": scriptlib.effect_get_cost,
+    "GetValue": scriptlib.effect_get_value,
+    "GetOperation": scriptlib.effect_get_operation,
+    "GetActiveType": scriptlib.effect_get_active_type,
+    "IsActiveType": scriptlib.effect_is_active_type,
+    "GetOwnerPlayer": scriptlib.effect_get_owner_player,
+    "GetHandlerPlayer": scriptlib.effect_get_handler_player,
+    "IsHasProperty": scriptlib.effect_is_has_property,
+    "IsHasCategory": scriptlib.effect_is_has_category,
+    "IsHasType": scriptlib.effect_is_has_type,
+    "IsActivatable": scriptlib.effect_is_activatable,
+    "IsActivated": scriptlib.effect_is_activated,
+    "GetActivateLocation": scriptlib.effect_get_activate_location,
+    "GetActivateSequence": scriptlib.effect_get_activate_sequence,
+    "CheckCountLimit": scriptlib.effect_check_count_limit,
+    "UseCountLimit": scriptlib.effect_use_count_limit,
+    "NULL": null
+};
+
+const grouplib = {
+    "__band": scriptlib.group_band,
+    "__add": scriptlib.group_add,
+    "__sub": scriptlib.group_sub_const,
+    "__len": scriptlib.group_len,
+    "__eq": scriptlib.group_equal_size,
+    "__lt": scriptlib.group_less_than,
+    "__le": scriptlib.group_less_equal_than,
+    "CreateGroup": scriptlib.group_new,
+    "KeepAlive": scriptlib.group_keep_alive,
+    "DeleteGroup": scriptlib.group_delete,
+    "Clone": scriptlib.group_clone,
+    "FromCards": scriptlib.group_from_cards,
+    "Clear": scriptlib.group_clear,
+    "AddCard": scriptlib.group_add_card,
+    "RemoveCard": scriptlib.group_remove_card,
+    "GetNext": scriptlib.group_get_next,
+    "GetFirst": scriptlib.group_get_first,
+    "TakeatPos": scriptlib.group_take_at_pos,
+    "GetCount": scriptlib.group_get_count,
+    "ForEach": scriptlib.group_for_each,
+    "Filter": scriptlib.group_filter,
+    "FilterCount": scriptlib.group_filter_count,
+    "FilterSelect": scriptlib.group_filter_select,
+    "Select": scriptlib.group_select,
+    "SelectUnselect": scriptlib.group_select_unselect,
+    "RandomSelect": scriptlib.group_random_select,
+    "IsExists": scriptlib.group_is_exists,
+    "CheckWithSumEqual": scriptlib.group_check_with_sum_equal,
+    "SelectWithSumEqual": scriptlib.group_select_with_sum_equal,
+    "CheckWithSumGreater": scriptlib.group_check_with_sum_greater,
+    "SelectWithSumGreater": scriptlib.group_select_with_sum_greater,
+    "GetMinGroup": scriptlib.group_get_min_group,
+    "GetMaxGroup": scriptlib.group_get_max_group,
+    "GetSum": scriptlib.group_get_sum,
+    "GetClass": scriptlib.group_get_class,
+    "GetClassCount": scriptlib.group_get_class_count,
+    "Remove": scriptlib.group_remove,
+    "Merge": scriptlib.group_merge,
+    "Sub": scriptlib.group_sub,
+    "Equal": scriptlib.group_equal,
+    "IsContains": scriptlib.group_is_contains,
+    "SearchCard": scriptlib.group_search_card,
+    "Split": scriptlib.group_split,
+    "Includes": scriptlib.group_includes,
+    "NULL": null
+};
+
+const duellib = {
+    "EnableGlobalFlag": scriptlib.duel_enable_global_flag,
+    "GetLP": scriptlib.duel_get_lp,
+    "SetLP": scriptlib.duel_set_lp,
+    "GetTurnPlayer": scriptlib.duel_get_turn_player,
+    "GetTurnCount": scriptlib.duel_get_turn_count,
+    "GetDrawCount": scriptlib.duel_get_draw_count,
+    "RegisterEffect": scriptlib.duel_register_effect,
+    "RegisterFlagEffect": scriptlib.duel_register_flag_effect,
+    "GetFlagEffect": scriptlib.duel_get_flag_effect,
+    "ResetFlagEffect": scriptlib.duel_reset_flag_effect,
+    "SetFlagEffectLabel": scriptlib.duel_set_flag_effect_label,
+    "GetFlagEffectLabel": scriptlib.duel_get_flag_effect_label,
+    "Destroy": scriptlib.duel_destroy,
+    "Remove": scriptlib.duel_remove,
+    "SendtoGrave": scriptlib.duel_sendto_grave,
+    "SendtoHand": scriptlib.duel_sendto_hand,
+    "SendtoDeck": scriptlib.duel_sendto_deck,
+    "SendtoExtraP": scriptlib.duel_sendto_extra,
+    "Sendto": scriptlib.duel_sendto,
+    "RemoveCards": scriptlib.duel_remove_cards,
+    "GetOperatedGroup": scriptlib.duel_get_operated_group,
+    "Summon": scriptlib.duel_summon,
+    "SpecialSummonRule": scriptlib.duel_special_summon_rule,
+    "SynchroSummon": scriptlib.duel_synchro_summon,
+    "XyzSummon": scriptlib.duel_xyz_summon,
+    "LinkSummon": scriptlib.duel_link_summon,
+    "ProcedureSummon": scriptlib.duel_procedure_summon,
+    "MSet": scriptlib.duel_setm,
+    "SSet": scriptlib.duel_sets,
+    "CreateToken": scriptlib.duel_create_token,
+    "SpecialSummon": scriptlib.duel_special_summon,
+    "SpecialSummonStep": scriptlib.duel_special_summon_step,
+    "SpecialSummonComplete": scriptlib.duel_special_summon_complete,
+    "IsCanAddCounter": scriptlib.duel_is_can_add_counter,
+    "RemoveCounter": scriptlib.duel_remove_counter,
+    "IsCanRemoveCounter": scriptlib.duel_is_can_remove_counter,
+    "GetCounter": scriptlib.duel_get_counter,
+    "ChangePosition": scriptlib.duel_change_form,
+    "Release": scriptlib.duel_release,
+    "MoveToField": scriptlib.duel_move_to_field,
+    "ReturnToField": scriptlib.duel_return_to_field,
+    "MoveSequence": scriptlib.duel_move_sequence,
+    "SwapSequence": scriptlib.duel_swap_sequence,
+    "Activate": scriptlib.duel_activate_effect,
+    "SetChainLimit": scriptlib.duel_set_chain_limit,
+    "SetChainLimitTillChainEnd": scriptlib.duel_set_chain_limit_p,
+    "GetChainMaterial": scriptlib.duel_get_chain_material,
+    "ConfirmDecktop": scriptlib.duel_confirm_decktop,
+    "ConfirmExtratop": scriptlib.duel_confirm_extratop,
+    "ConfirmCards": scriptlib.duel_confirm_cards,
+    "SortDecktop": scriptlib.duel_sort_decktop,
+    "CheckEvent": scriptlib.duel_check_event,
+    "RaiseEvent": scriptlib.duel_raise_event,
+    "RaiseSingleEvent": scriptlib.duel_raise_single_event,
+    "CheckTiming": scriptlib.duel_check_timing,
+    "GetEnvironment": scriptlib.duel_get_environment,
+    "IsEnvironment": scriptlib.duel_is_environment,
+    "Win": scriptlib.duel_win,
+    "Draw": scriptlib.duel_draw,
+    "Damage": scriptlib.duel_damage,
+    "Recover": scriptlib.duel_recover,
+    "RDComplete": scriptlib.duel_rd_complete,
+    "Equip": scriptlib.duel_equip,
+    "EquipComplete": scriptlib.duel_equip_complete,
+    "GetControl": scriptlib.duel_get_control,
+    "SwapControl": scriptlib.duel_swap_control,
+    "CheckLPCost": scriptlib.duel_check_lp_cost,
+    "PayLPCost": scriptlib.duel_pay_lp_cost,
+    "DiscardDeck": scriptlib.duel_discard_deck,
+    "DiscardHand": scriptlib.duel_discard_hand,
+    "DisableShuffleCheck": scriptlib.duel_disable_shuffle_check,
+    "ShuffleDeck": scriptlib.duel_shuffle_deck,
+    "ShuffleExtra": scriptlib.duel_shuffle_extra,
+    "ShuffleHand": scriptlib.duel_shuffle_hand,
+    "ShuffleSetCard": scriptlib.duel_shuffle_setcard,
+    "ChangeAttacker": scriptlib.duel_change_attacker,
+    "ChangeAttackTarget": scriptlib.duel_change_attack_target,
+    "AttackCostPaid": scriptlib.duel_attack_cost_paid,
+    "ForceAttack": scriptlib.duel_force_attack,
+    "CalculateDamage": scriptlib.duel_calculate_damage,
+    "GetBattleDamage": scriptlib.duel_get_battle_damage,
+    "ChangeBattleDamage": scriptlib.duel_change_battle_damage,
+    "ChangeTargetCard": scriptlib.duel_change_target,
+    "ChangeTargetPlayer": scriptlib.duel_change_target_player,
+    "ChangeTargetParam": scriptlib.duel_change_target_param,
+    "BreakEffect": scriptlib.duel_break_effect,
+    "ChangeChainOperation": scriptlib.duel_change_effect,
+    "NegateActivation": scriptlib.duel_negate_activate,
+    "NegateEffect": scriptlib.duel_negate_effect,
+    "NegateRelatedChain": scriptlib.duel_negate_related_chain,
+    "NegateSummon": scriptlib.duel_disable_summon,
+    "IncreaseSummonedCount": scriptlib.duel_increase_summon_count,
+    "CheckSummonedCount": scriptlib.duel_check_summon_count,
+    "GetLocationCount": scriptlib.duel_get_location_count,
+    "GetMZoneCount": scriptlib.duel_get_mzone_count,
+    "GetLocationCountFromEx": scriptlib.duel_get_location_count_fromex,
+    "GetUsableMZoneCount": scriptlib.duel_get_usable_mzone_count,
+    "GetLinkedGroup": scriptlib.duel_get_linked_group,
+    "GetLinkedGroupCount": scriptlib.duel_get_linked_group_count,
+    "GetLinkedZone": scriptlib.duel_get_linked_zone,
+    "GetFreeLinkedZone": scriptlib.duel_get_free_linked_zone,
+    "GetFieldCard": scriptlib.duel_get_field_card,
+    "CheckLocation": scriptlib.duel_check_location,
+    "GetCurrentChain": scriptlib.duel_get_current_chain,
+    "GetChainInfo": scriptlib.duel_get_chain_info,
+    "GetChainEvent": scriptlib.duel_get_chain_event,
+    "GetFirstTarget": scriptlib.duel_get_first_target,
+    "GetCurrentPhase": scriptlib.duel_get_current_phase,
+    "SkipPhase": scriptlib.duel_skip_phase,
+    "IsAttackCostPaid": scriptlib.duel_is_attack_cost_paid,
+    "IsDamageCalculated": scriptlib.duel_is_damage_calculated,
+    "GetAttacker": scriptlib.duel_get_attacker,
+    "GetAttackTarget": scriptlib.duel_get_attack_target,
+    "GetBattleMonster": scriptlib.duel_get_battle_monster,
+    "NegateAttack": scriptlib.duel_disable_attack,
+    "ChainAttack": scriptlib.duel_chain_attack,
+    "Readjust": scriptlib.duel_readjust,
+    "AdjustInstantly": scriptlib.duel_adjust_instantly,
+    "GetFieldGroup": scriptlib.duel_get_field_group,
+    "GetFieldGroupCount": scriptlib.duel_get_field_group_count,
+    "GetDecktopGroup": scriptlib.duel_get_decktop_group,
+    "GetExtraTopGroup": scriptlib.duel_get_extratop_group,
+    "GetMatchingGroup": scriptlib.duel_get_matching_group,
+    "GetMatchingGroupCount": scriptlib.duel_get_matching_count,
+    "GetFirstMatchingCard": scriptlib.duel_get_first_matching_card,
+    "IsExistingMatchingCard": scriptlib.duel_is_existing_matching_card,
+    "SelectMatchingCard": scriptlib.duel_select_matching_cards,
+    "GetReleaseGroup": scriptlib.duel_get_release_group,
+    "GetReleaseGroupCount": scriptlib.duel_get_release_group_count,
+    "CheckReleaseGroup": scriptlib.duel_check_release_group,
+    "SelectReleaseGroup": scriptlib.duel_select_release_group,
+    "CheckReleaseGroupEx": scriptlib.duel_check_release_group_ex,
+    "SelectReleaseGroupEx": scriptlib.duel_select_release_group_ex,
+    "GetTributeGroup": scriptlib.duel_get_tribute_group,
+    "GetTributeCount": scriptlib.duel_get_tribute_count,
+    "CheckTribute": scriptlib.duel_check_tribute,
+    "SelectTribute": scriptlib.duel_select_tribute,
+    "GetTargetCount": scriptlib.duel_get_target_count,
+    "IsExistingTarget": scriptlib.duel_is_existing_target,
+    "SelectTarget": scriptlib.duel_select_target,
+    "SelectFusionMaterial": scriptlib.duel_select_fusion_material,
+    "SetFusionMaterial": scriptlib.duel_set_fusion_material,
+    "SetSynchroMaterial": scriptlib.duel_set_synchro_material,
+    "GetRitualMaterial": scriptlib.duel_get_ritual_material,
+    "ReleaseRitualMaterial": scriptlib.duel_release_ritual_material,
+    "GetFusionMaterial": scriptlib.duel_get_fusion_material,
+    "SetSelectedCard": scriptlib.duel_set_must_select_cards,
+    "GrabSelectedCard": scriptlib.duel_grab_must_select_cards,
+    "SetTargetCard": scriptlib.duel_set_target_card,
+    "ClearTargetCard": scriptlib.duel_clear_target_card,
+    "SetTargetPlayer": scriptlib.duel_set_target_player,
+    "SetTargetParam": scriptlib.duel_set_target_param,
+    "SetOperationInfo": scriptlib.duel_set_operation_info,
+    "GetOperationInfo": scriptlib.duel_get_operation_info,
+    "GetOperationCount": scriptlib.duel_get_operation_count,
+    "ClearOperationInfo": scriptlib.duel_clear_operation_info,
+    "Overlay": scriptlib.duel_overlay,
+    "GetOverlayGroup": scriptlib.duel_get_overlay_group,
+    "GetOverlayCount": scriptlib.duel_get_overlay_count,
+    "CheckRemoveOverlayCard": scriptlib.duel_check_remove_overlay_card,
+    "RemoveOverlayCard": scriptlib.duel_remove_overlay_card,
+    "Hint": scriptlib.duel_hint,
+    "HintSelection": scriptlib.duel_hint_selection,
+    "SelectEffectYesNo": scriptlib.duel_select_effect_yesno,
+    "SelectYesNo": scriptlib.duel_select_yesno,
+    "SelectOption": scriptlib.duel_select_option,
+    "SelectSequence": scriptlib.duel_select_sequence,
+    "SelectPosition": scriptlib.duel_select_position,
+    "SelectDisableField": scriptlib.duel_select_disable_field,
+    "SelectFieldZone": scriptlib.duel_select_field_zone,
+    "AnnounceRace": scriptlib.duel_announce_race,
+    "AnnounceAttribute": scriptlib.duel_announce_attribute,
+    "AnnounceLevel": scriptlib.duel_announce_level,
+    "AnnounceCard": scriptlib.duel_announce_card,
+    "AnnounceType": scriptlib.duel_announce_type,
+    "AnnounceNumber": scriptlib.duel_announce_number,
+    "AnnounceCoin": scriptlib.duel_announce_coin,
+    "TossCoin": scriptlib.duel_toss_coin,
+    "TossDice": scriptlib.duel_toss_dice,
+    "RockPaperScissors": scriptlib.duel_rock_paper_scissors,
+    "GetCoinResult": scriptlib.duel_get_coin_result,
+    "GetDiceResult": scriptlib.duel_get_dice_result,
+    "SetCoinResult": scriptlib.duel_set_coin_result,
+    "SetDiceResult": scriptlib.duel_set_dice_result,
+    "IsDuelType": scriptlib.duel_is_duel_type,
+    "IsPlayerAffectedByEffect": scriptlib.duel_is_player_affected_by_effect,
+    "GetPlayerEffect": scriptlib.duel_get_player_effect,
+    "IsPlayerCanDraw": scriptlib.duel_is_player_can_draw,
+    "IsPlayerCanDiscardDeck": scriptlib.duel_is_player_can_discard_deck,
+    "IsPlayerCanDiscardDeckAsCost": scriptlib.duel_is_player_can_discard_deck_as_cost,
+    "IsPlayerCanSummon": scriptlib.duel_is_player_can_summon,
+    "CanPlayerSetMonster": scriptlib.duel_can_player_set_monster,
+    "CanPlayerSetSpellTrap": scriptlib.duel_can_player_set_spell_trap,
+    "IsPlayerCanSpecialSummon": scriptlib.duel_is_player_can_spsummon,
+    "IsPlayerCanFlipSummon": scriptlib.duel_is_player_can_flipsummon,
+    "IsPlayerCanSpecialSummonMonster": scriptlib.duel_is_player_can_spsummon_monster,
+    "IsPlayerCanSpecialSummonCount": scriptlib.duel_is_player_can_spsummon_count,
+    "IsPlayerCanRelease": scriptlib.duel_is_player_can_release,
+    "IsPlayerCanRemove": scriptlib.duel_is_player_can_remove,
+    "IsPlayerCanSendtoHand": scriptlib.duel_is_player_can_send_to_hand,
+    "IsPlayerCanSendtoGrave": scriptlib.duel_is_player_can_send_to_grave,
+    "IsPlayerCanSendtoDeck": scriptlib.duel_is_player_can_send_to_deck,
+    "IsPlayerCanAdditionalSummon": scriptlib.duel_is_player_can_additional_summon,
+    "IsChainNegatable": scriptlib.duel_is_chain_negatable,
+    "IsChainDisablable": scriptlib.duel_is_chain_disablable,
+    "CheckChainTarget": scriptlib.duel_check_chain_target,
+    "CheckChainUniqueness": scriptlib.duel_check_chain_uniqueness,
+    "GetActivityCount": scriptlib.duel_get_activity_count,
+    "CheckPhaseActivity": scriptlib.duel_check_phase_activity,
+    "AddCustomActivityCounter": scriptlib.duel_add_custom_activity_counter,
+    "GetCustomActivityCount": scriptlib.duel_get_custom_activity_count,
+    "GetBattledCount": scriptlib.duel_get_battled_count,
+    "IsAbleToEnterBP": scriptlib.duel_is_able_to_enter_bp,
+    "VenomSwampCheck": scriptlib.duel_venom_swamp_check,
+    "TagSwap": scriptlib.duel_tag_swap,
+    "GetPlayersCount": scriptlib.duel_get_player_count,
+    "SwapDeckAndGrave": scriptlib.duel_swap_deck_and_grave,
+    "MajesticCopy": scriptlib.duel_majestic_copy,
+    "GetRandomNumber": scriptlib.duel_get_random_number,
+    "AssumeReset": scriptlib.duel_assume_reset,
+    "GetCardFromCardID": scriptlib.duel_get_card_from_cardid,
+    "LoadScript": scriptlib.duel_load_script,
+    "NULL": null
+};
+
+const debuglib = {
+    "Message": scriptlib.debug_message,
+    "AddCard": scriptlib.debug_add_card,
+    "SetPlayerInfo": scriptlib.debug_set_player_info,
+    "PreSummon": scriptlib.debug_pre_summon,
+    "PreEquip": scriptlib.debug_pre_equip,
+    "PreSetTarget": scriptlib.debug_pre_set_target,
+    "PreAddCounter": scriptlib.debug_pre_add_counter,
+    "ReloadFieldBegin": scriptlib.debug_reload_field_begin,
+    "ReloadFieldEnd": scriptlib.debug_reload_field_end,
+    "SetAIName": scriptlib.debug_set_ai_name,
+    "ShowHint": scriptlib.debug_show_hint,
+    "PrintStacktrace": scriptlib.debug_print_stacktrace,
+    "NULL": null
+};
+
+interpreter(duel * pd): coroutines(256) {
+    lua_state = luaL_newstate();
+    current_state = lua_state;
+    pduel = pd;
+    no_action = 0;
+    call_depth = 0;
+    set_duel_info(lua_state, pd);
+    //Initial
+    luaL_openlibs(lua_state);
+    lua_pushnil(lua_state);
+    lua_setglobal(lua_state, "file");
+    lua_pushnil(lua_state);
+    lua_setglobal(lua_state, "io");
+    lua_pushnil(lua_state);
+    lua_setglobal(lua_state, "os");
+    //open all libs
+    luaL_newlib(lua_state, cardlib);
+    lua_pushstring(lua_state, "__index");
+    lua_pushvalue(lua_state, -2);
+    lua_rawset(lua_state, -3);
+    lua_setglobal(lua_state, "Card");
+    luaL_newlib(lua_state, effectlib);
+    lua_pushstring(lua_state, "__index");
+    lua_pushvalue(lua_state, -2);
+    lua_rawset(lua_state, -3);
+    lua_setglobal(lua_state, "Effect");
+    luaL_newlib(lua_state, grouplib);
+    lua_pushstring(lua_state, "__index");
+    lua_pushvalue(lua_state, -2);
+    lua_rawset(lua_state, -3);
+    lua_setglobal(lua_state, "Group");
+    luaL_newlib(lua_state, duellib);
+    lua_setglobal(lua_state, "Duel");
+    luaL_newlib(lua_state, debuglib);
+    lua_setglobal(lua_state, "Debug");
+}
+
+function interpreter(pd) {
+    const lua_state = luaL_newstate();
+    const current_state = lua_state;
+    const pduel = pd;
+    const no_action = 0;
+    const call_depth = 0;
+    set_duel_info(lua_state, pd);
+    //Initial
+    luaL_openlibs(lua_state);
+    lua_pushnil(lua_state);
+    lua_setglobal(lua_state, "file");
+    lua_pushnil(lua_state);
+    lua_setglobal(lua_state, "io");
+    lua_pushnil(lua_state);
+    lua_setglobal(lua_state, "os");
+    //open all libs
+    luaL_newlib(lua_state, cardlib);
+    lua_pushstring(lua_state, "__index");
+    lua_pushvalue(lua_state, -2);
+    lua_rawset(lua_state, -3);
+    lua_setglobal(lua_state, "Card");
+    luaL_newlib(lua_state, effectlib);
+    lua_pushstring(lua_state, "__index");
+    lua_pushvalue(lua_state, -2);
+    lua_rawset(lua_state, -3);
+    lua_setglobal(lua_state, "Effect");
+    luaL_newlib(lua_state, grouplib);
+    lua_pushstring(lua_state, "__index");
+    lua_pushvalue(lua_state, -2);
+    lua_rawset(lua_state, -3);
+    lua_setglobal(lua_state, "Group");
+    luaL_newlib(lua_state, duellib);
+    lua_setglobal(lua_state, "Duel");
+    luaL_newlib(lua_state, debuglib);
+    lua_setglobal(lua_state, "Debug");
+}
+
+
+function register_card(pcard) {
+    //create a card in by userdata
+    const pcard = lua_newuserdata(lua_state);
+    pcard.ref_handle = luaL_ref(lua_state, LUA_REGISTRYINDEX);
+    //some userdata may be created in script like token so use current_state
+    lua_rawgeti(current_state, LUA_REGISTRYINDEX, pcard.ref_handle);
+    //load script
+    if (pcard.data.alias && (pcard.data.alias < pcard.data.code + 10) && (pcard.data.code < pcard.data.alias + 10)) {
+        load_card_script(pcard.data.alias);
+    } else {
+        load_card_script(pcard.data.code);
+    }
+
+    //set metatable of pointer to base script
+    lua_setmetatable(current_state, -2);
+    lua_pop(current_state, 1);
+    //Initial
+    if (pcard.data.code) {
+        const forced = !(pcard.data.type & TYPE_NORMAL) || (pcard.data.type & TYPE_PENDULUM);
+        pcard.set_status(STATUS_INITIALIZING, TRUE);
+        add_param(pcard, PARAM_TYPE_CARD);
+        call_card_function(pcard, "initial_effect", 1, 0, forced);
+        pcard.set_status(STATUS_INITIALIZING, FALSE);
+    }
+    pcard.cardid = pduel.game_field.infos.card_id++;
+    return OPERATION_SUCCESS;
+}
+
+module.exports = {
+    interpreter,
+    register_card
+};
