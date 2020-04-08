@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/SalvationDevelopment/Exodius-Core/issues"
   },
-  "homepage": "https://github.com/SalvationDevelopment/Exodius-Core#readme"
+  "homepage": "https://github.com/SalvationDevelopment/Exodius-Core#readme",
+  "dependencies": {
+    "lua.vm.js": "0.0.1"
+  }
 }
