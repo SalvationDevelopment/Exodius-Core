@@ -757,11 +757,37 @@ function unregister_group(pgroup) {
     luaL_unref(lua_state, LUA_REGISTRYINDEX, pgroup.ref_handle);
     pgroup.ref_handle = 0;
 }
+/*
+If no script_name is given, then the api will use the buffer as reference
+for the script name to load. If a script_name is given, the api will use
+the buffer and the len passed as the script buffer, without calling the
+script reader.
+*/
+function load_script(scriptBuffer, len, script_name) {
+
+    if (!scriptBuffer) {
+        return OPERATION_FAIL;
+    }
+    // should refactor this to be just a script call.
+    no_action++; // the hell is this?
+    error = luaL_loadbuffer(current_state, scriptBuffer, len, script_name) || lua_pcall(current_state, 0, 0, 0);
+    if (error) {
+        
+        pduel.handle_message(pduel.handle_message_payload, lua_tostring(current_state, -1), OCG_LOG_TYPE_ERROR);
+        lua_pop(current_state, 1);
+        no_action--;
+        return OPERATION_FAIL;
+    }
+    no_action--;
+    return OPERATION_SUCCESS;
+}
 
 module.exports = {
     interpreter,
     register_card,
     register_effect,
     unregister_effect,
-    register_group
+    register_group,
+    unregister_group,
+    load_script
 };
