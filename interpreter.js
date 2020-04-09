@@ -5,8 +5,13 @@ const lauxlib = fengari.lauxlib;
 const lualib = fengari.lualib;
 
 
-const scriptlib = require('./scriptlib');
+const card = require('./card');
+const effect = require('./effect');
+const group = require('./group');
+const duel = require('./duel');
+const scriptlib = {};
 
+object.assign(scriptlib, card, effect, group, duel);
 object.assign(global, lua, lauxlib, lualib);
 
 
@@ -623,42 +628,6 @@ const debuglib = {
     "NULL": null
 };
 
-interpreter(duel * pd): coroutines(256) {
-    lua_state = luaL_newstate();
-    current_state = lua_state;
-    pduel = pd;
-    no_action = 0;
-    call_depth = 0;
-    set_duel_info(lua_state, pd);
-    //Initial
-    luaL_openlibs(lua_state);
-    lua_pushnil(lua_state);
-    lua_setglobal(lua_state, "file");
-    lua_pushnil(lua_state);
-    lua_setglobal(lua_state, "io");
-    lua_pushnil(lua_state);
-    lua_setglobal(lua_state, "os");
-    //open all libs
-    luaL_newlib(lua_state, cardlib);
-    lua_pushstring(lua_state, "__index");
-    lua_pushvalue(lua_state, -2);
-    lua_rawset(lua_state, -3);
-    lua_setglobal(lua_state, "Card");
-    luaL_newlib(lua_state, effectlib);
-    lua_pushstring(lua_state, "__index");
-    lua_pushvalue(lua_state, -2);
-    lua_rawset(lua_state, -3);
-    lua_setglobal(lua_state, "Effect");
-    luaL_newlib(lua_state, grouplib);
-    lua_pushstring(lua_state, "__index");
-    lua_pushvalue(lua_state, -2);
-    lua_rawset(lua_state, -3);
-    lua_setglobal(lua_state, "Group");
-    luaL_newlib(lua_state, duellib);
-    lua_setglobal(lua_state, "Duel");
-    luaL_newlib(lua_state, debuglib);
-    lua_setglobal(lua_state, "Debug");
-}
 
 function interpreter(pd) {
     const lua_state = luaL_newstate();
@@ -667,6 +636,7 @@ function interpreter(pd) {
     const no_action = 0;
     const call_depth = 0;
     set_duel_info(lua_state, pd);
+
     //Initial
     luaL_openlibs(lua_state);
     lua_pushnil(lua_state);
@@ -675,6 +645,7 @@ function interpreter(pd) {
     lua_setglobal(lua_state, "io");
     lua_pushnil(lua_state);
     lua_setglobal(lua_state, "os");
+
     //open all libs
     luaL_newlib(lua_state, cardlib);
     lua_pushstring(lua_state, "__index");
@@ -726,7 +697,71 @@ function register_card(pcard) {
     return OPERATION_SUCCESS;
 }
 
+function register_effect(peffect) {
+    if (!peffect) {
+        return;
+    }
+    //create a effect in by userdata
+    peffect = lua_newuserdata(lua_state);
+
+    peffect.ref_handle = luaL_ref(lua_state, LUA_REGISTRYINDEX);
+    //set metatable of pointer to base script
+    lua_rawgeti(lua_state, LUA_REGISTRYINDEX, peffect.ref_handle);
+    lua_getglobal(lua_state, "Effect");
+    lua_setmetatable(lua_state, -2);
+    lua_pop(lua_state, 1);
+}
+
+function unregister_effect(peffect) {
+    if (!peffect) {
+        return;
+    }
+
+    if (peffect.condition) {
+        luaL_unref(lua_state, LUA_REGISTRYINDEX, peffect.condition);
+    }
+    if (peffect.cost) {
+        luaL_unref(lua_state, LUA_REGISTRYINDEX, peffect.cost);
+    }
+    if (peffect.target) {
+        luaL_unref(lua_state, LUA_REGISTRYINDEX, peffect.target);
+    }
+    if (peffect.operation) {
+        luaL_unref(lua_state, LUA_REGISTRYINDEX, peffect.operation);
+    }
+    if (peffect.value && peffect.is_flag(EFFECT_FLAG_FUNC_VALUE)) {
+        luaL_unref(lua_state, LUA_REGISTRYINDEX, peffect.value);
+    }
+
+    luaL_unref(lua_state, LUA_REGISTRYINDEX, peffect.ref_handle);
+    peffect.ref_handle = 0;
+}
+
+function register_group(pgroup) {
+    if (!pgroup)
+        return;
+    //create a group in by userdata
+    pgroup = lua_newuserdata(lua_state);
+
+    pgroup.ref_handle = luaL_ref(lua_state, LUA_REGISTRYINDEX);
+    //set metatable of pointer to base script
+    lua_rawgeti(lua_state, LUA_REGISTRYINDEX, pgroup.ref_handle);
+    lua_getglobal(lua_state, "Group");
+    lua_setmetatable(lua_state, -2);
+    lua_pop(lua_state, 1);
+}
+
+function unregister_group(pgroup) {
+    if (!pgroup)
+        return;
+    luaL_unref(lua_state, LUA_REGISTRYINDEX, pgroup.ref_handle);
+    pgroup.ref_handle = 0;
+}
+
 module.exports = {
     interpreter,
-    register_card
+    register_card,
+    register_effect,
+    unregister_effect,
+    register_group
 };
